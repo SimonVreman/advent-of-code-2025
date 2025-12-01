@@ -1,0 +1,15 @@
+package days
+
+import (
+_dayimports_
+)
+
+type PuzzleFunc func(input []byte) int
+type Puzzle struct {
+	Fn       PuzzleFunc
+	Expected int
+}
+
+var Solutions = map[int][]Puzzle{
+_dayentries_
+}
