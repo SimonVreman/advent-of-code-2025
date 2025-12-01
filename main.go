@@ -113,7 +113,7 @@ func buildImportMap() {
 	entries := []byte{}
 	for i, day := range dayNumbers {
 		imports = fmt.Appendf(imports, "	days_%v \"simonvreman/advent-of-code-2025/src/days/%v\"", day, day)
-		entries = fmt.Appendf(entries, "	%v: {{days_%v.First, days_%v.FirstExpected}, {days_%v.First, days_%v.SecondExpected}},", day, day, day, day, day)
+		entries = fmt.Appendf(entries, "	%v: {{days_%v.First, days_%v.FirstExpected}, {days_%v.Second, days_%v.SecondExpected}},", day, day, day, day, day)
 
 		if i < (len(dayNumbers) - 1) {
 			imports = append(imports, '\n')

@@ -12,18 +12,22 @@ import (
 func TestAllDays(t *testing.T) {
 	for day, puzzles := range days.Solutions {
 		for part, puzzle := range puzzles {
-			runTestForPuzzle(t, day, part, puzzle)
+			runTestForPuzzle(t, day, part+1, puzzle)
 		}
 	}
 }
 
 func runTestForPuzzle(t *testing.T, day int, part int, puzzle days.Puzzle) {
-	t.Run(fmt.Sprintf("day %v part %v", day, part+1), func(t *testing.T) {
-		inputPath := filepath.Join("..", "days", strconv.Itoa(day), fmt.Sprintf("example_%v.txt", part+1))
+	t.Run(fmt.Sprintf("day %v part %v", day, part), func(t *testing.T) {
+		inputPath := filepath.Join("..", "days", strconv.Itoa(day), fmt.Sprintf("example_%v.txt", part))
 		input, err := os.ReadFile(inputPath)
 
 		if err != nil {
 			t.Fatal("failed to read test input file", err.Error())
+		}
+
+		if len(input) == 0 {
+			t.Skip("empty input file")
 		}
 
 		expected := puzzle.Expected

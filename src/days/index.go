@@ -11,5 +11,5 @@ type Puzzle struct {
 }
 
 var Solutions = map[int][]Puzzle{
-	1: {{days_1.First, days_1.FirstExpected}, {days_1.First, days_1.SecondExpected}},
+	1: {{days_1.First, days_1.FirstExpected}, {days_1.Second, days_1.SecondExpected}},
 }
