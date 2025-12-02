@@ -2,6 +2,7 @@ package days
 
 import (
 	days_1 "simonvreman/advent-of-code-2025/src/days/1"
+	days_2 "simonvreman/advent-of-code-2025/src/days/2"
 )
 
 type PuzzleFunc func(input []byte) int
@@ -12,4 +13,5 @@ type Puzzle struct {
 
 var Solutions = map[int][]Puzzle{
 	1: {{days_1.First, days_1.FirstExpected}, {days_1.Second, days_1.SecondExpected}},
+	2: {{days_2.First, days_2.FirstExpected}, {days_2.Second, days_2.SecondExpected}},
 }
